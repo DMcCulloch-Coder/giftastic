@@ -4,7 +4,7 @@ $(document).ready(function() {
     let gifCount = 10
 
     //API query info
-    let search = "fairy tail"; //replace spaces with +!!!!!!!!!!
+    let search = "doug";
     let searchOutput = search.split(' ').join('+')
 
     let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchOutput + "&api_key=LvqdLRMeMuzOP8peDBL2nks74S42MJ0F";

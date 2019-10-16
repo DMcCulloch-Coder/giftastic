@@ -1,26 +1,24 @@
 
+.navbar {
+    width: 90%;
 
+}
 
 img {
     height: 150px;
+    margin: 10px;
 
 
 }
 
-.btn-group-vertical {
-    border-radius: 0%;
 
-
-
-}
-
-.btn {
+.button {
     color: white;
     background-color: gray;
 
 }
 
-.btn:hover {
+.button:hover {
     background-color: green;
     color: blue;
 
