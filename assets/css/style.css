@@ -4,5 +4,24 @@
 img {
     height: 150px;
 
-    
+
+}
+
+.btn-group-vertical {
+    border-radius: 0%;
+
+
+
+}
+
+.btn {
+    color: white;
+    background-color: gray;
+
+}
+
+.btn:hover {
+    background-color: green;
+    color: blue;
+
 }
