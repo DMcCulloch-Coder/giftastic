@@ -12,14 +12,33 @@ img {
 }
 
 
+.button-div {
+    position: absolute;
+    float: right;
+    right: 5px;
+    top: 10px;
+
+}
+
 .button {
     color: white;
     background-color: gray;
+    display: block;
+    text-align: right;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+
 
 }
 
 .button:hover {
     background-color: green;
     color: blue;
+
+}
+
+.gifs {
+    width: 85%;
 
 }
