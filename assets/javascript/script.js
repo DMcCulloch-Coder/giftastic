@@ -4,10 +4,11 @@ $(document).ready(function() {
     let gifCount = 10
 
     //API query info
-    let search = "The Doctor";
+    let search = "Rose Tyler";
     let searchOutput = search.split(' ').join('+');
     let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchOutput + "&api_key=LvqdLRMeMuzOP8peDBL2nks74S42MJ0F";
-    let topicArray = ["Dr. Who", "Cybermen", "Dalek", "Tardis", "Gallifrey", "Time Lords", "The Doctor"];
+    let topicArray = ["Dr. Who", "Cybermen", "Dalek", "Tardis", "Gallifrey", "Time Lords", "The Doctor", "Clara Oswald", "Amy Pond", 
+      "River Song", "Martha Jones", "Weeping Angel", "Sonic Screwdriver", "Rose Tyler"];
     
 
     //functions
