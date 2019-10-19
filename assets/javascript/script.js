@@ -61,6 +61,7 @@ $(document).ready(function() {
   renderButtons();
   getGifs();
   
+  // onclick for adding new buttons for topics
   $('.add-bar-button').on("click", function(event) {
     event.preventDefault();
     let addButton = $('.add-bar').val();
@@ -80,9 +81,7 @@ $(document).ready(function() {
   })
 
   $(document).on('click', '#extend', function() {
-   
     if(gifCount <= 100) {
-      
       gifCount += 10;
       getGifs();
     }
@@ -93,7 +92,6 @@ $(document).ready(function() {
   })
 
   $(document).on('click', 'img', function() {
-
     let tempData = $(this).attr('src')
     $(this).attr('src', $(this).attr('data-gif'))
     $(this).attr('data-gif', tempData)
