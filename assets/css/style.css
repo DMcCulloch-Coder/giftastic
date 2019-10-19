@@ -88,3 +88,39 @@ p {
     display: table-footer-group;
 
 }
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        display: block;
+        text-align: center;
+    }
+    img {
+        height: auto;
+        width: 90%;
+    }
+    .divDisplay {
+        width: 75%;
+    }
+    .button-div {
+        margin-top: 120px;
+    }
+    
+}
+
+@media only screen and (max-width: 3600px) {
+    h1 {
+        display: block;
+        text-align: center;
+    }
+    img {
+        height: auto;
+        width: 90%;
+    }
+    .divDisplay {
+        width: 60%;
+    }
+    .button-div {
+        margin-top: 120px;
+    }
+    
+}
