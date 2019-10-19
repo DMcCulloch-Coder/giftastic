@@ -9,8 +9,8 @@ $(document).ready(function() {
     let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchOutput + "&api_key=LvqdLRMeMuzOP8peDBL2nks74S42MJ0F";
     let topicArray = ["Dr. Who", "Cybermen", "Dalek", "Tardis", "Gallifrey", "Time Lords", "The Doctor", "Clara Oswald", "Amy Pond", 
       "River Song", "Martha Jones", "Weeping Angel", "Sonic Screwdriver", "Rose Tyler"];
-    
 
+ 
     //functions
     function renderButtons() {
       //clear out current gifs
@@ -44,9 +44,9 @@ $(document).ready(function() {
         url: queryURL,
         method: "GET"
       }).then(function(response) {
-        
+        console.log(response) //test
         for(let i = 0; i < gifCount; i++){
-          $('.gifs').append(`<img class='gif' src=${response.data[i].images.original.url} />`)
+          $('.gifs').append(`<img class='gif' data-gif=${response.data[i].images.original.url} src=${response.data[i].images.original_still.url} />`)
           
         }
           
@@ -70,27 +70,33 @@ $(document).ready(function() {
 
   })
 
-  $('.button').on('click', function(event) {
+  $(document).on('click', '.button', function() {
     search = $(this).attr('data-name')
     gifCount = 10;
+    $('#extend').css('display', 'block')
     getGifs();
 
   })
 
-  $('#extend').on('click', function(event) {
-    console.log('working')  //test
+  $(document).on('click', '#extend', function() {
+   
     if(gifCount <= 100) {
-      console.log('still working')  //test
+      
       gifCount += 10;
       getGifs();
     }
     if(gifCount === 100) {
       $('#extend').css('display', 'none')
     }
+
+  })
+
+  $(document).on('click', 'img', function() {
+
+    let tempData = $(this).attr('src')
+    $(this).attr('src', $(this).attr('data-gif'))
+    $(this).attr('data-gif', tempData)
+
   })
       
 })
-
-// when doing onclick for add buttin add:
-// event.preventDefault(); // to stop it from refreshing the page after onclick to submit new inputs
-// add conditional to not work if it is blank
