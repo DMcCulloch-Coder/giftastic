@@ -1,6 +1,19 @@
+body {
+    font-family: 'Kanit', sans-serif;
+    background-image: url('../images/stardust.png');
+
+}
 
 .navbar {
     width: 90%;
+
+}
+
+h1 {
+    margin: 5px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    font-size: 250%;
 
 }
 
@@ -11,6 +24,24 @@ img {
 
 }
 
+button {
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    background-color: gray;
+    
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+
+}
+
+input {
+    font-family: 'Kanit', sans-serif;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+
+}
 
 .button-div {
     position: absolute;
@@ -21,20 +52,15 @@ img {
 }
 
 .button {
-    color: white;
-    background-color: gray;
     display: block;
-    text-align: right;
-    padding: 5px;
-    margin: 5px;
-    border-radius: 5px;
+    
 
 
 }
 
-.button:hover {
-    background-color: green;
-    color: blue;
+button:hover {
+    background-color: rgb(63, 63, 63);
+    color: lightblue;
 
 }
 
