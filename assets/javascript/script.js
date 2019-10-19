@@ -32,9 +32,9 @@ $(document).ready(function() {
 
     //calling API
     function getGifs() {
-      console.log('possible error')
+      console.log(gifCount) //test
 
-      $('#gifs img').empty();
+      $('.gifs').empty();
 
       searchOutput = search.split(' ').join('+');
       queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchOutput + "&api_key=LvqdLRMeMuzOP8peDBL2nks74S42MJ0F";
@@ -44,9 +44,9 @@ $(document).ready(function() {
         url: queryURL,
         method: "GET"
       }).then(function(response) {
-        console.log(response) //test
+        
         for(let i = 0; i < gifCount; i++){
-          $('.gifs').append(`<img src=${response.data[i].images.original.url} />`)
+          $('.gifs').append(`<img class='gif' src=${response.data[i].images.original.url} />`)
           
         }
           
@@ -72,15 +72,15 @@ $(document).ready(function() {
 
   $('.button').on('click', function(event) {
     search = $(this).attr('data-name')
-    console.log(search)
+    gifCount = 10;
     getGifs();
 
   })
 
   $('#extend').on('click', function(event) {
-    console.log('working')
+    console.log('working')  //test
     if(gifCount <= 100) {
-      console.log('still working')
+      console.log('still working')  //test
       gifCount += 10;
       getGifs();
     }
