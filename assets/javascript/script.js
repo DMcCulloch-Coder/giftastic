@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
     // global variables
-    let gifCount = 10 //set as a variable so that you can increase the gifs on the page, set up 100 max.
-
+    let offsetValue = 0 //set as a variable so that you can increase the gifs on the page, set up 100 max.
+    
     //API query info
     let search = "Dr. Who";
     let searchOutput = search.split(' ').join('+');
@@ -24,7 +24,6 @@ $(document).ready(function() {
         newButton.text(topicArray[i])
         $('.button-div').append(newButton)
 
-
       }
 
     }
@@ -32,12 +31,10 @@ $(document).ready(function() {
 
     //calling API
     function getGifs() {
-      console.log(gifCount) //test
-
-      $('.gifs').empty();
-
+      console.log(offsetValue) //test
+      
       searchOutput = search.split(' ').join('+');
-      queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchOutput + "&api_key=LvqdLRMeMuzOP8peDBL2nks74S42MJ0F";
+      queryURL = `https://api.giphy.com/v1/gifs/search?q=${searchOutput}&api_key=LvqdLRMeMuzOP8peDBL2nks74S42MJ0F&limit=10&offset=${offsetValue}`;
 
       //get the new gifs
       $.ajax({
@@ -45,7 +42,7 @@ $(document).ready(function() {
         method: "GET"
       }).then(function(response) {
         console.log(response) //test
-        for(let i = 0; i < gifCount; i++){
+        for(let i = 0; i < (offsetValue+10); i++){
           $('.gifs').append(`<div class='divDisplay'><img class='gif' data-gif=${response.data[i].images.original.url} src=${response.data[i].images.original_still.url} />
             <p>Title: ${response.data[i].title}</p><p>Rating: ${response.data[i].rating}</p></div`)
           
@@ -74,18 +71,19 @@ $(document).ready(function() {
 
   $(document).on('click', '.button', function() {
     search = $(this).attr('data-name')
-    gifCount = 10;
+    offsetValue = 10;
     $('#extend').css('display', 'block')
+    $('.gifs').empty();
     getGifs();
 
   })
 
   $(document).on('click', '#extend', function() {
-    if(gifCount <= 100) {
-      gifCount += 10;
+    if(offsetValue <= 90) {
+      offsetValue += 10;
       getGifs();
     }
-    if(gifCount === 100) {
+    if(offsetValue === 90) {
       $('#extend').css('display', 'none')
     }
 
