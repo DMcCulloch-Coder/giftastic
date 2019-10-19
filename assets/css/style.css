@@ -4,6 +4,11 @@ body {
 
 }
 
+p {
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
 .navbar {
     width: 90%;
 
@@ -19,8 +24,9 @@ h1 {
 
 img {
     height: 150px;
-    margin: 5px;
+    margin: 0px;
     border-radius: 5px;
+    display: table-header-group;
 
 
 }
@@ -29,7 +35,6 @@ button {
     font-family: 'Kanit', sans-serif;
     color: white;
     background-color: gray;
-    
     padding: 5px;
     margin: 5px;
     border-radius: 5px;
@@ -70,5 +75,16 @@ button:hover {
 
 .extend {
     margin: 5px;
-    
+
+}
+
+.divDisplay {
+    display: inline-block;
+    margin: 10px;
+
+}
+
+p {
+    display: table-footer-group;
+
 }

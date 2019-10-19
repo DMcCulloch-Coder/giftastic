@@ -46,7 +46,8 @@ $(document).ready(function() {
       }).then(function(response) {
         console.log(response) //test
         for(let i = 0; i < gifCount; i++){
-          $('.gifs').append(`<img class='gif' data-gif=${response.data[i].images.original.url} src=${response.data[i].images.original_still.url} />`)
+          $('.gifs').append(`<div class='divDisplay'><img class='gif' data-gif=${response.data[i].images.original.url} src=${response.data[i].images.original_still.url} />
+            <p>Title: ${response.data[i].title}</p><p>Rating: ${response.data[i].rating}</p></div`)
           
         }
           
