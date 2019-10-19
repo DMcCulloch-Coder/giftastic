@@ -53,7 +53,7 @@ input {
     position: absolute;
     float: right;
     right: 5px;
-    top: 100px;
+    top: 12px;
 
 }
 
@@ -89,15 +89,6 @@ p {
 
 }
 
-.fav {
-    height: 64px;
-    width: 64px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-
-}
-
 @media only screen and (max-width: 600px) {
     h1 {
         display: block;
@@ -114,7 +105,7 @@ p {
         width: 75%;
     }
     .button-div {
-        margin-top: 35px;
+        margin-top: 125px;
     }
     
 }
@@ -132,7 +123,7 @@ p {
         width: 60%;
     }
     .button-div {
-        margin-top: 40px;
+        margin-top: 125px;
     }
     
 }
