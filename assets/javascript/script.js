@@ -50,8 +50,22 @@ $(document).ready(function() {
 
 
   //Call functions and onclicks
+  
+
   renderButtons();
   getGifs();
+  
+  $('.add-bar-button').on("click", function(event) {
+    event.preventDefault();
+    let addButton = $('.add-bar').val();
+    $('.add-bar').val('')
+    topicArray.push(addButton);
+    renderButtons();
+    
+
+  })
+
+  
       
 })
 
