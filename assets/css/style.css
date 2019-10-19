@@ -19,7 +19,8 @@ h1 {
 
 img {
     height: 150px;
-    margin: 10px;
+    margin: 5px;
+    border-radius: 5px;
 
 
 }
@@ -53,8 +54,6 @@ input {
 
 .button {
     display: block;
-    
-
 
 }
 
@@ -67,4 +66,9 @@ button:hover {
 .gifs {
     width: 85%;
 
+}
+
+.extend {
+    margin: 5px;
+    
 }
